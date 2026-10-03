@@ -1,0 +1,27 @@
+To Download for windows :
+
+Command Prompt :
+irm https://ollama.com/install.ps1 | iex
+
+Pull the model onto local :
+
+ollama run qwen3.8:27b
+
+ Optimizing Context Memory for 10 GB VRAM : 
+ 
+ Because your RTX 3080 has 10 GB of VRAM, the model will split between your GPU and System RAM.   To keep generation fast and prevent your 16 GB System RAM from hitting 100% usage, restrict the context window size inside your terminal chat:
+ 
+ /set parameter num_ctx 8192
+
+
+ Handy Ollama Commands
+/exit or Ctrl + D — Quit the chat session and instantly free up system RAM/VRAM.
+
+ollama list — View all downloaded models stored on your SSD.
+
+ollama rm qwen3.8:27b — Delete the model file to free up SSD space.
+
+Latest models :
+
+ollama pull qwen3.5:9b
+ollama pull qwen3:14b
